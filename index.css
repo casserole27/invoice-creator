@@ -10,21 +10,29 @@ Date: April 2023
 :root {
     
     /*COLORS*/
-  
-    
+    --bg-black: #000000;
+    --main-blue: #3A69D2;
+    --bg-blue: #1F2937;
+    --very-lt-gray: #F0F0F0;
+    --txt-lt-gray: #F5F5F5;
+    --txt-gray: #918E9B;
+    --txt-white: #FFFFFF;
+
     /*BORDER RADIUS*/
+    --br-reg: 5px;
     --br-soft: 1rem;
     --br-round: 50%;
     
     /*FONT SIZES*/
-    --fs-xs: 1rem;
-    --fs-s: 1.25rem;
-    --fs-m: 1.5rem;
-    --fs-l: 2.25rem;
+    --fs-xs: .75rem;
+    --fs-s: 1rem;
+    --fs-m: 1.25rem;
+    --fs-ml: 1.5rem;
+    --fs-l: 2rem;
     --fs-title: 2.5rem;
 }
 
-/****** MARGIN AND PADDING RESET ******/
+/*====== MARGIN AND PADDING RESET ======*/
 
 * {
     margin: 0;
@@ -32,4 +40,183 @@ Date: April 2023
     box-sizing: border-box;
 }
 
-/******* GLOBAL STYLES *******/
+/*====== GLOBAL STYLES ======*/
+
+body {
+    
+    background-color: var(--bg-black);
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+
+input,
+select,
+button {
+    font-family: inherit;
+    border: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+header {
+    background-color: var(--main-blue);
+}
+
+main,
+.remove-btn {
+    background-color: var(--bg-blue);
+}
+
+
+/*======  TYPOGRAPHY  ======*/
+
+h1 {
+    font-size: var(--fs-l);
+ 
+}
+
+h2 {
+    font-size: var(--fs-s);
+}
+
+h1,
+li {
+    text-transform: capitalize;
+}
+
+h1,
+h2,
+li,
+.total-amt {
+    color: var(--txt-white);
+}
+
+h2,
+h3 {
+    font-weight: 400; 
+}
+
+h3 {
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}
+
+h3,
+.notes {
+    font-size: var(--fs-xs);
+    color: var(--txt-gray);
+}
+
+input, 
+span,
+.remove-btn {
+    color: var(--txt-gray);
+}
+
+.add-btn,
+.send-btn {
+    background-color: var(--main-blue);
+    color: var(--txt-white);
+}
+
+.total-amt {
+    font-size: var(--fs-l);
+}
+
+
+/*====== LAYOUT ======*/
+
+.body-container {
+    max-width: 550px;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+header {
+    padding: 2em 1em;
+}
+
+h1 {
+    margin-bottom: .5625rem;
+}
+
+/*! WHY ISN'T BORDER RADIUS WORKING? */
+
+.form-div {
+    margin-bottom: 1.5em;
+
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+select,
+.add-btn {
+    width: 100%;
+    text-align: center;
+    padding: .75em;
+}
+
+main {
+    padding: 1em;
+}
+
+li {
+    margin-bottom: .5em;
+}
+
+.info-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tasks-container {
+    text-align: left;
+    margin-bottom: 1.5em;
+}
+
+.total-container {
+    text-align: right;
+}
+
+hr {
+    margin-bottom: 1.5em;
+}
+
+.notes-ttl-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+
+.notes-container {
+    width: 50%;
+    text-align: left;
+}
+
+.total-container {
+    text-align: right;
+  
+}
+
+.send-btn {
+    width: 100%;
+    padding: .75em 1.25em;
+    margin-bottom: 2em;
+    border-radius: var(--br-reg);
+}
+
+
+
+
+
+
+ 
+
+
+
+
+
+
