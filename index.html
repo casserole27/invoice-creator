@@ -10,10 +10,15 @@
     <!-- GOOGLE FONTS-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
     
+    <!-- FONT AWESOME CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" 
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- CSS STYLESHEET-->    
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="index.css">
 </head>
 
 <!-- 
@@ -21,3 +26,89 @@
     https://clewisdev.com
     Date: April 2023
  -->
+<html>
+
+    <body>
+
+        <div class="body-container">
+
+            <header>
+                <h1 class="title">Invoice Creator</h1>
+                <h2 class="subtitle">Thanks for choosing GoodCorp LLC!</h2>
+            </header>
+
+            <main class="main-container">
+
+                <form action="">
+                    
+                    <input 
+                        type="text"
+                        id="task-input"
+                        name="task-input" 
+                        aria-label="enter task" 
+                        placeholder="Enter task"
+                        required>
+
+                    <!--TODO https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select-->
+                    <select name="prices" id="prices-select">
+                        <option value="10">$10</option>
+                        <option value="20">$20</option>
+                        <option value="30">$30</option>
+                    </select>
+                    
+                    <button class="fa-solid fa-square-plus" 
+                        aria-label="submit selections" 
+                        type="submit"></button>
+                
+                </form>
+
+                <section class="tasks-container" id="tasks-container">
+                
+                <!--TODO LISTS TO BE RENDERED BY JS-->    
+                
+                    <h3 class="task-title">task</h3>
+                    
+                    <ul>
+                        <li>wash car</li>
+                        <button>remove</button>
+                        <li>mow lawn</li>
+                        <button>remove</button>
+                        <li>wash car</li>
+                        <button>remove</button>
+                    </ul>
+
+                    <h3 class="total=title">total</h3>
+                    
+                    <ul>
+                        <li>$10</li>
+                        <li>$20</li>
+                        <li>$30</li>
+                    </ul>
+
+                </section>
+
+                <hr>
+
+                <section class="notes-container">
+                    
+                    <h3 class="notes-title">notes</h3>
+                    <p class="notes">We accept cash, credit card, or PayPal</p>
+                
+                </section>
+
+                <section class="total-container">
+                    
+                    <h3 class="total-title">total amount</h3>
+                    <!--TODO TOTAL AMOUNT TO BE RENDERED BY JS-->
+                    <p class="total-amount" id="total-amount">$60</p>
+                
+                </section>
+
+                <button type="submit">send invoice</button>
+
+            </main>
+        </div>
+    
+    </body>
+ 
+</html>
