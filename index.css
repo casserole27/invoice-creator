@@ -13,6 +13,8 @@ Date: April 2023
     --bg-black: #000000;
     --main-blue: #3A69D2;
     --bg-blue: #1F2937;
+    --avo-green: rgb(111, 233, 111);
+    --dk-avo-green: rgb(83, 168, 83);
     --very-lt-gray: #F0F0F0;
     --txt-lt-gray: #F5F5F5;
     --txt-gray: #918E9B;
@@ -49,6 +51,11 @@ body {
     text-align: center;
 }
 
+header {
+    background-color: var(--main-blue);
+    padding: 2em 1em;
+}
+
 input,
 select,
 button {
@@ -56,12 +63,32 @@ button {
     border: none;
 }
 
-ul {
-    list-style-type: none;
+input {
+    border-radius: 5px 5px 0 0;
 }
 
-header {
-    background-color: var(--main-blue);
+select {
+    font-size: var(--fs-s);
+}
+
+input:focus,
+select:focus,
+button:focus {
+    border: 3px solid var(--avo-green);
+    outline: none;
+}
+
+button:hover,
+.env-icon:hover {
+    background-color: var(--dk-avo-green);
+}
+
+.add-btn {
+    border-radius: 0 0 5px 5px;
+}
+
+ul {
+    list-style-type: none;
 }
 
 main,
@@ -69,12 +96,16 @@ main,
     background-color: var(--bg-blue);
 }
 
+main {
+    padding: 1em;
+}
+
 
 /*======  TYPOGRAPHY  ======*/
 
 h1 {
     font-size: var(--fs-l);
- 
+    margin-bottom: .5625rem;
 }
 
 h2 {
@@ -116,9 +147,15 @@ span,
 }
 
 .add-btn,
-.send-btn {
+.send-btn,
+.env-icon {
     background-color: var(--main-blue);
     color: var(--txt-white);
+}
+
+li {
+    font-size: var(--fs-s);
+    margin-bottom: .5em;
 }
 
 .total-amt {
@@ -134,16 +171,6 @@ span,
     margin: 0 auto;
 }
 
-header {
-    padding: 2em 1em;
-}
-
-h1 {
-    margin-bottom: .5625rem;
-}
-
-/*! WHY ISN'T BORDER RADIUS WORKING? */
-
 .form-div {
     margin-bottom: 1.5em;
 
@@ -154,58 +181,111 @@ h1 {
 input,
 select,
 .add-btn {
-    width: 100%;
     text-align: center;
-    padding: .75em;
+    padding: 1.5em .75em;
 }
 
-main {
-    padding: 1em;
-}
-
-li {
-    margin-bottom: .5em;
-}
-
-.info-container {
+.info-container, 
+.footer-container {
     display: flex;
     justify-content: space-between;
 }
 
-.tasks-container {
+.remove-btn {
+    margin-left: .5em;
+}
+
+hr,
+.tasks-container,
+.footer-container {
+    margin-bottom: 1.5em;
+}
+
+.tasks-container,
+.notes-container {
     text-align: left;
-    margin-bottom: 1.5em;
-}
-
-.total-container {
-    text-align: right;
-}
-
-hr {
-    margin-bottom: 1.5em;
-}
-
-.notes-ttl-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 2em;
 }
 
 .notes-container {
     width: 50%;
-    text-align: left;
 }
 
-.total-container {
+.total-container,
+.total-amt-container {
     text-align: right;
-  
+}
+
+.total-amt {
+    color: var(--avo-green);
 }
 
 .send-btn {
     width: 100%;
-    padding: .75em 1.25em;
-    margin-bottom: 2em;
+    text-transform: capitalize;
+    padding: 1.25em .75em;
+    margin-bottom: 4em;
     border-radius: var(--br-reg);
+}
+
+@media (min-width: 450px) {
+
+    h1 {
+        font-size: var(--fs-title);
+    }
+
+    input,
+    select,
+    .add-btn,
+    .send-btn {
+        font-size: var(--fs-m);
+    }
+
+    input,
+    .send-btn {
+        padding: 1em .5em;
+    }
+    
+    input {
+        width: 100%;
+    }
+
+    select,
+    .add-btn {
+        padding: 0 1.25em;
+    }
+
+    input {
+        border-radius: 5px 0 0 5px;
+    }
+
+    .add-btn {
+        border-radius: 0 5px 5px 0;
+    }
+
+    li {
+        font-size: var(--fs-m);
+        margin-bottom: 1.5em; 
+    }
+
+    .body-container {
+        margin: 2em auto;
+    }
+
+    main {
+        padding: 2em;   
+    }
+
+    .form-div {
+        flex-direction: row;
+        margin-bottom: 2.74rem;
+    }
+
+    .footer-container {
+        margin-bottom: 2.5em;
+    }
+
+
+
 }
 
 
