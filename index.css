@@ -10,21 +10,31 @@ Date: April 2023
 :root {
     
     /*COLORS*/
-  
-    
+    --bg-black: #000000;
+    --main-blue: #3A69D2;
+    --bg-blue: #1F2937;
+    --avo-green: rgb(111, 233, 111);
+    --dk-avo-green: rgb(83, 168, 83);
+    --very-lt-gray: #F0F0F0;
+    --txt-lt-gray: #F5F5F5;
+    --txt-gray: #918E9B;
+    --txt-white: #FFFFFF;
+
     /*BORDER RADIUS*/
+    --br-reg: 5px;
     --br-soft: 1rem;
     --br-round: 50%;
     
     /*FONT SIZES*/
-    --fs-xs: 1rem;
-    --fs-s: 1.25rem;
-    --fs-m: 1.5rem;
-    --fs-l: 2.25rem;
+    --fs-xs: .75rem;
+    --fs-s: 1rem;
+    --fs-m: 1.25rem;
+    --fs-ml: 1.5rem;
+    --fs-l: 2rem;
     --fs-title: 2.5rem;
 }
 
-/****** MARGIN AND PADDING RESET ******/
+/*====== MARGIN AND PADDING RESET ======*/
 
 * {
     margin: 0;
@@ -32,4 +42,261 @@ Date: April 2023
     box-sizing: border-box;
 }
 
-/******* GLOBAL STYLES *******/
+/*====== GLOBAL STYLES ======*/
+
+body {
+    
+    background-color: var(--bg-black);
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+
+header {
+    background-color: var(--main-blue);
+    padding: 2em 1em;
+}
+
+input,
+select,
+button {
+    font-family: inherit;
+    border: none;
+}
+
+input {
+    border-radius: 5px 5px 0 0;
+}
+
+select {
+    font-size: var(--fs-s);
+}
+
+input:focus,
+select:focus,
+button:focus {
+    border: 3px solid var(--avo-green);
+    outline: none;
+}
+
+button:hover,
+.env-icon:hover {
+    background-color: var(--dk-avo-green);
+}
+
+.add-btn {
+    border-radius: 0 0 5px 5px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+main,
+.remove-btn {
+    background-color: var(--bg-blue);
+}
+
+main {
+    padding: 1em;
+}
+
+
+/*======  TYPOGRAPHY  ======*/
+
+h1 {
+    font-size: var(--fs-l);
+    margin-bottom: .5625rem;
+}
+
+h2 {
+    font-size: var(--fs-s);
+}
+
+h1,
+li {
+    text-transform: capitalize;
+}
+
+h1,
+h2,
+li,
+.total-amt {
+    color: var(--txt-white);
+}
+
+h2,
+h3 {
+    font-weight: 400; 
+}
+
+h3 {
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}
+
+h3,
+.notes {
+    font-size: var(--fs-xs);
+    color: var(--txt-gray);
+}
+
+input, 
+span,
+.remove-btn {
+    color: var(--txt-gray);
+}
+
+.add-btn,
+.send-btn,
+.env-icon {
+    background-color: var(--main-blue);
+    color: var(--txt-white);
+}
+
+li {
+    font-size: var(--fs-s);
+    margin-bottom: .5em;
+}
+
+.total-amt {
+    font-size: var(--fs-l);
+}
+
+
+/*====== LAYOUT ======*/
+
+.body-container {
+    max-width: 550px;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+.form-div {
+    margin-bottom: 1.5em;
+
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+select,
+.add-btn {
+    text-align: center;
+    padding: 1.5em .75em;
+}
+
+.info-container, 
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.remove-btn {
+    margin-left: .5em;
+}
+
+hr,
+.tasks-container,
+.footer-container {
+    margin-bottom: 1.5em;
+}
+
+.tasks-container,
+.notes-container {
+    text-align: left;
+}
+
+.notes-container {
+    width: 50%;
+}
+
+.total-container,
+.total-amt-container {
+    text-align: right;
+}
+
+.total-amt {
+    color: var(--avo-green);
+}
+
+.send-btn {
+    width: 100%;
+    text-transform: capitalize;
+    padding: 1.25em .75em;
+    margin-bottom: 4em;
+    border-radius: var(--br-reg);
+}
+
+@media (min-width: 450px) {
+
+    h1 {
+        font-size: var(--fs-title);
+    }
+
+    input,
+    select,
+    .add-btn,
+    .send-btn {
+        font-size: var(--fs-m);
+    }
+
+    input,
+    .send-btn {
+        padding: 1em .5em;
+    }
+    
+    input {
+        width: 100%;
+    }
+
+    select,
+    .add-btn {
+        padding: 0 1.25em;
+    }
+
+    input {
+        border-radius: 5px 0 0 5px;
+    }
+
+    .add-btn {
+        border-radius: 0 5px 5px 0;
+    }
+
+    li {
+        font-size: var(--fs-m);
+        margin-bottom: 1.5em; 
+    }
+
+    .body-container {
+        margin: 2em auto;
+    }
+
+    main {
+        padding: 2em;   
+    }
+
+    .form-div {
+        flex-direction: row;
+        margin-bottom: 2.74rem;
+    }
+
+    .footer-container {
+        margin-bottom: 2.5em;
+    }
+
+
+
+}
+
+
+
+
+
+
+ 
+
+
+
+
+
+

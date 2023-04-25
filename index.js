@@ -6,14 +6,53 @@ Date: April 2023
 
 /****** VARIABLES ******/
 
+//TODO #1 
+//!CREATE ARRAY TO HOLD TASK DATA
+/*
+Restaurant app data is an array that contains an object for each food item.
+name, ingredients, price, emoji, id
+This app data: task, price, id
+*/
+//? How does the price be set to the value of the dropdown input field?
 
+//TODO #2
+//!ADD BUTTON VARIABLE
+//!INPUT VARIABLES
 
+//TODO #5
+//!REMOVE BUTTON VARIABLE
+
+//TODO #6
+//!SEND INVOICE BUTTON VARIABLE
 
 
 /****** FUNCTIONS ******/
 
+//TODO #2
+//!FUNCTION THAT ADDS TASK TO ARRAY
+//? .push() method?
 
+//TODO #3 
+//!DISPLAY DATA FROM ARRAY, DISPLAY UPDATES WHEN ARRAY CHANGES
+//!CHARGE ONLY ONCE FOR EACH TASK (DON'T ADD DUPLICATES)
 
+//TODO #4
+//!UPDATE TOTAL AMOUNT EACH TIME A TASK GETS ADDED
+
+//TODO #5
+//!REMOVE BUTTON REMOVES TASKS FROM LIST AND TOTAL
+
+//TODO #6
+//!SEND INVOICE BUTTON RESETS FORM AND TOTAL AMOUNT TO $0
 
 
 /****** EVENT LISTENERS ******/
+
+//TODO #2 
+//!ADD BUTTON ADDS TASK TO ARRAY - EVENT LISTENER
+
+//TODO #5
+//!REMOVE BUTTON REMOVES TASKS FROM LISTS AND TOTAL - EVENT LISTENER
+
+//TODO #6
+//!SEND INVOICE BUTTON RESETS - EVENT LISTENER
