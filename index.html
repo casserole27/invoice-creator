@@ -33,112 +33,82 @@
         <div class="body-container">
 
             <header>
-                <h1 class="title">invoice creator</h1>
+                <h1 class="title">Invoice Creator</h1>
                 <h2 class="subtitle">Thanks for choosing GoodCorp LLC!</h2>
             </header>
 
             <main class="main-container">
 
                 <form action="">
-
-                    <div class="form-div">                    
                     
-                        <input 
-                            type="text"
-                            id="task-input"
-                            name="task-input" 
-                            aria-label="enter task" 
-                            placeholder="Enter task"
-                            required>
+                    <input 
+                        type="text"
+                        id="task-input"
+                        name="task-input" 
+                        aria-label="enter task" 
+                        placeholder="Enter task"
+                        required>
 
-                        <!--TODO https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select-->
-                        <select name="prices" id="prices-select">
-                            <option value="10">
-                                <span>$</span>
-                                10</option>
-                            <option value="20">
-                                <span>$</span>
-                                20</option>
-                            <option value="30">
-                                <span>$</span>
-                                30</option>
-                        </select>
-                        
-                        <button class="add-btn fa-solid fa-plus" 
-                            aria-label="submit selections" 
-                            type="submit"></button>
+                    <!--TODO https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select-->
+                    <select name="prices" id="prices-select">
+                        <option value="10">$10</option>
+                        <option value="20">$20</option>
+                        <option value="30">$30</option>
+                        <option value="30">$40</option>
+                        <option value="30">$50</option>
+                    </select>
                     
-                        </div>
+                    <button class="fa-solid fa-square-plus" 
+                        aria-label="submit selections" 
+                        type="submit"></button>
                 
                 </form>
 
-                <section class="info-container" id="tasks-container">
+                <section class="tasks-container" id="tasks-container">
                 
                 <!--TODO LISTS TO BE RENDERED BY JS-->    
-                    <div class="tasks-container">
-
-                        <h3 class="task-title">task</h3>
-                        
-                        <ul class="tasks">
-                            <li>wash car 
-                                <button class="remove-btn">remove</button></li>
-                            <li>mow lawn
-                                <button class="remove-btn">remove</button>
-                            </li>
-                            <li>wash car
-                                <button class="remove-btn">remove</button>
-                            </li>
-                        </ul>
-
-                    </div>
-
-                    <div class="total-container">
-                        
-                        <h3 class="total=title">total</h3>
-                        
-                        <ul class="price">
-                            <li>
-                                <span>$</span>10
-                            </li>
-                            <li>
-                                <span>$</span>20
-                            </li>
-                            <li>
-                                <span>$</span>30
-                            </li>
-                        </ul>
+                
+                    <h3 class="task-title">task</h3>
                     
-                    </div>
+                    <ul>
+                        <li>wash car</li>
+                        <button>remove</button>
+                        <li>mow lawn</li>
+                        <button>remove</button>
+                        <li>pull weeds</li>
+                        <button>remove</button>
+                    </ul>
+
+                    <h3 class="total=title">total</h3>
+                    
+                    <ul>
+                        <li>$10</li>
+                        <li>$20</li>
+                        <li>$30</li>
+                    </ul>
 
                 </section>
 
                 <hr>
 
-                <footer>
-
-                    <div class="footer-container">
-                        
-                        <div class="notes-container">
-                        <h3 class="notes-title">notes</h3>
-                        <p class="notes">We accept cash, credit card, or PayPal</p>
-                        </div>
-
-                        <div class="total-amt-container">          
-                        <h3 class="total-title">total amount</h3>
-                        <!--TODO TOTAL AMOUNT TO BE RENDERED BY JS-->
-                        <p class="total-amt" id="total-amt">$60</p>
-                        </div>
-
-                    </div>
-
-                    <button class="send-btn" id="send-btn" type="submit">
-                        <span class="env-icon fa-solid fa-envelope"></span>
-                        send invoice</button>
+                <section class="notes-container">
+                    
+                    <h3 class="notes-title">notes</h3>
+                    <p class="notes">We accept cash, credit card, or PayPal</p>
                 
-                </footer>
+                </section>
+
+                <section class="total-container">
+                    
+                    <h3 class="total-title">total amount</h3>
+                    <!--TODO TOTAL AMOUNT TO BE RENDERED BY JS-->
+                    <p class="total-amount" id="total-amount">$60</p>
+                
+                </section>
+
+                <button type="submit">send invoice</button>
 
             </main>
-        
         </div>
     
     </body>

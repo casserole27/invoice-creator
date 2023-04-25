@@ -28,7 +28,7 @@ Requirements
 - display data from array; should update when array changes
 - charge only once for each task (don't add duplicates)
 - update total amount each time a task gets added
-- button to "send invoice" (reset)
+- button to "send invoice" (reset) - reset form and total amount
 
 Stretch goals
 - enter tasks with small form
