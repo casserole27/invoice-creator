@@ -146,6 +146,11 @@ span,
     color: var(--txt-gray);
 }
 
+input,
+.send-btn {
+    font-size: var(--fs-s);
+}
+
 .add-btn,
 .send-btn,
 .env-icon {
@@ -210,7 +215,6 @@ hr,
     width: 50%;
 }
 
-.total-container,
 .total-amt-container,
 .total-amount {
     text-align: right;
@@ -228,28 +232,13 @@ hr,
     border-radius: var(--br-reg);
 }
 
-/* ====== NUMBER INPUT ====== */
+/*====== ACTIVE CLASS ======*/
 
-.total-amount {
-    background-color: var(--bg-blue);
-    color: var(--avo-green);
-    border: none;
+.active {
+    background-color: var(--avo-green);
+    color: var(--bg-blue);
 }
 
-/****** REMOVE NUMBER SPINNER FROM INPUTS ******/ 
-
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-
-}
 
 /*====== MEDIA QUERY ======*/
 
@@ -268,6 +257,7 @@ input[type=number] {
 
     input,
     .send-btn {
+        font-size: var(--fs-m);
         padding: 1em .5em;
     }
     
