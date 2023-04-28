@@ -4,20 +4,18 @@ https://clewisdev.com
 Date: April 2023
 */
 
+
+import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
+
 /****** VARIABLES ******/
 
-//TODO 
-//!CREATE ARRAY TO HOLD TASK DATA
-/*
-Restaurant app data is an array that contains an object for each food item.
-name, ingredients, price, emoji, id
-This app data: task, price, id
-*/
-//? How does the price be set to the value of the dropdown input field?
+const taskArray = [];
 
-//TODO 
-//!ADD BUTTON VARIABLE
-//!INPUT VARIABLES
+const addBtn = document.getElementById('add-btn');
+
+const taskInput = document.getElementById('task-input');
+const priceSelect = document.getElementById('prices-select');
+
 
 //TODO 
 //!REMOVE BUTTON VARIABLE
@@ -28,12 +26,43 @@ This app data: task, price, id
 
 /****** FUNCTIONS ******/
 
-//TODO 
-//!FUNCTION THAT ADDS TASK TO ARRAY
-//? .push() method?
+function renderTasksArray () {
+
+    if (taskInput.value && priceSelect.value) {
+        taskArray.push({
+            name: taskInput.value,
+            price: priceSelect.value,
+            uuid: uuidv4()     
+        })
+    }
+}
+
+function renderTasksList() {
+    let taskFeed = "";
+
+    taskArray.forEach(function(task) {
+        taskFeed += `
+            <li>${task.name}
+            <button class="remove-btn">remove</button>
+            </li>`
+    })
+
+    document.getElementById('task-list').innerHTML = taskFeed
+}
+
+function renderPriceList() {
+    let priceFeed = "";
+
+    taskArray.forEach(function(task) {
+        priceFeed += `
+        <li>$${task.price}</li>`
+    })
+
+    document.getElementById('price-list').innerHTML = priceFeed;
+}
+
 
 //TODO 
-//!DISPLAY DATA FROM ARRAY, DISPLAY UPDATES WHEN ARRAY CHANGES
 //!CHARGE ONLY ONCE FOR EACH TASK (DON'T ADD DUPLICATES)
 
 //TODO 
@@ -50,6 +79,11 @@ This app data: task, price, id
 
 //TODO 
 //!ADD BUTTON ADDS TASK TO ARRAY - EVENT LISTENER
+addBtn.addEventListener("click", function() {
+    renderTasksArray()
+    renderTasksList()
+    renderPriceList()
+})
 
 //TODO 
 //!REMOVE BUTTON REMOVES TASKS FROM LISTS AND TOTAL - EVENT LISTENER
