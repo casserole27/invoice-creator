@@ -83,6 +83,8 @@ addBtn.addEventListener("click", function() {
     renderTasksArray()
     renderTasksList()
     renderPriceList()
+    taskInput.value = ""
+    priceSelect.value = ""
 })
 
 //TODO 
