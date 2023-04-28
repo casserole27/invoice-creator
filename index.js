@@ -27,15 +27,25 @@ const priceSelect = document.getElementById('prices-select');
 /****** FUNCTIONS ******/
 
 function renderTasksArray () {
-
-    if (taskInput.value && priceSelect.value) {
-        taskArray.push({
-            name: taskInput.value,
-            price: priceSelect.value,
-            uuid: uuidv4()     
-        })
+    
+    if (taskArray.find(({ name }) => name === taskInput.value)) {
+        taskInput.value = ""
+        priceSelect.value = ""
+        taskInput.classList.toggle('active');
+        taskInput.placeholder = "Please enter new task";
+    } else if (!taskArray.includes(taskInput.value)) {
+        if (taskInput.value != '') {
+            taskInput.classList.remove('active');
+            taskInput.placeholder = "Enter task";
+            taskArray.push({
+                name: taskInput.value,
+                price: priceSelect.value,
+                uuid: uuidv4()     
+            })
+        }
     }
 }
+ 
 
 function renderTasksList() {
     let taskFeed = "";
@@ -65,8 +75,15 @@ function renderPriceList() {
 //TODO 
 //!CHARGE ONLY ONCE FOR EACH TASK (DON'T ADD DUPLICATES)
 
-//TODO 
-//!UPDATE TOTAL AMOUNT EACH TIME A TASK GETS ADDED
+function renderTotalPrice() {
+  
+    let total = 0;
+    taskArray.forEach(function(amount) {
+        total += parseInt(amount.price);
+    })
+    
+    document.getElementById('total-amt').innerText = `$${total}`;
+}
 
 //TODO 
 //!REMOVE BUTTON REMOVES TASKS FROM LIST AND TOTAL
@@ -83,6 +100,7 @@ addBtn.addEventListener("click", function() {
     renderTasksArray()
     renderTasksList()
     renderPriceList()
+    renderTotalPrice()
     taskInput.value = ""
     priceSelect.value = ""
 })
