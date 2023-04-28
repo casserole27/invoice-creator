@@ -211,7 +211,8 @@ hr,
 }
 
 .total-container,
-.total-amt-container {
+.total-amt-container,
+.total-amount {
     text-align: right;
 }
 
@@ -226,6 +227,31 @@ hr,
     margin-bottom: 4em;
     border-radius: var(--br-reg);
 }
+
+/* ====== NUMBER INPUT ====== */
+
+.total-amount {
+    background-color: var(--bg-blue);
+    color: var(--avo-green);
+    border: none;
+}
+
+/****** REMOVE NUMBER SPINNER FROM INPUTS ******/ 
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+
+}
+
+/*====== MEDIA QUERY ======*/
 
 @media (min-width: 450px) {
 
