@@ -29,8 +29,8 @@ const priceSelect = document.getElementById('prices-select');
 function renderTasksArray () {
     
     if (taskArray.find(({ name }) => name === taskInput.value)) {
-        taskInput.value = ""
-        priceSelect.value = ""
+        taskInput.value = "";
+        priceSelect.value = "";
         taskInput.classList.toggle('active');
         taskInput.placeholder = "Please enter new task";
     } else if (!taskArray.includes(taskInput.value)) {
@@ -41,10 +41,10 @@ function renderTasksArray () {
                 name: taskInput.value,
                 price: priceSelect.value,
                 uuid: uuidv4()     
-            })
-        }
-    }
-}
+            });
+        };
+    };
+};
  
 
 function renderTasksList() {
