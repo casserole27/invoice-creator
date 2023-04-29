@@ -89,6 +89,7 @@ function removeItems(postId) {
     taskArray.splice(index, 1);
 
     renderTasksList(taskArray);
+    renderPriceList(taskArray);
     renderTotalPrice(taskArray);
 
 };
