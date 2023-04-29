@@ -78,6 +78,8 @@ Stretch goals
 
 [Scrimba help](https://different-marmoset-f7b.notion.site/Invoice-Creator-8bf9b4c09ef542d3a2d950c987738c21)
 
+[freeCodeCamp - removing an element from JS array](https://www.freecodecamp.org/news/how-to-remove-an-element-from-a-javascript-array-removing-a-specific-item-in-js/#remove-an-element-at-any-index-with-splice)
+
 
 ## Author
 
