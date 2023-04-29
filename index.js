@@ -12,30 +12,27 @@ let taskArray = [];
 
 const addBtn = document.getElementById('add-btn');
 
+const taskUl = document.getElementById('task-list');
 const taskInput = document.getElementById('task-input');
 const priceSelect = document.getElementById('prices-select');
 const totalAmt = document.getElementById('total-amt');
 
-
-//TODO 
-//!REMOVE BUTTON VARIABLE
-
 /****** FUNCTIONS ******/
 
-function renderTasksArray () {
+function renderTasksArray (arr) {
     
-    if (taskArray.find(({ name }) => name === taskInput.value)) {
+    if (arr.find(({ name }) => name === taskInput.value)) {
         taskInput.value = ""
         priceSelect.value = ""
         taskInput.classList.toggle('active');
         taskInput.placeholder = "Please enter new task";
     
-    } else if (!taskArray.includes(taskInput.value)) {
+    } else if (!arr.includes(taskInput.value)) {
         
         if (taskInput.value != '') {
             taskInput.classList.remove('active');
             taskInput.placeholder = "Enter task";
-            taskArray.push({
+            arr.push({
                 name: taskInput.value,
                 price: priceSelect.value,
                 uuid: uuidv4()     
@@ -44,24 +41,27 @@ function renderTasksArray () {
     };
 };
  
-
-function renderTasksList() {
+function renderTasksList(arr) {
     let taskFeed = "";
 
-    taskArray.forEach(function(task) {
+    arr.forEach(function(task) {
         taskFeed += `
             <li>${task.name}
-            <button class="remove-btn">remove</button>
+            <button 
+                class="remove-btn"
+                data-remove="${task.uuid}">
+                remove
+                </button>
             </li>`
     });
 
-    document.getElementById('task-list').innerHTML = taskFeed;
+    taskUl.innerHTML = taskFeed;
 }
 
-function renderPriceList() {
+function renderPriceList(arr) {
     let priceFeed = "";
 
-    taskArray.forEach(function(task) {
+    arr.forEach(function(task) {
         priceFeed += `
         <li>$${task.price}</li>`
     });
@@ -70,40 +70,61 @@ function renderPriceList() {
 }
 
 
-function renderTotalPrice() {
+function renderTotalPrice(arr) {
   
     let total = 0;
-    taskArray.forEach(function(amount) {
+    arr.forEach(function(amount) {
         total += parseInt(amount.price);
     })
     
     totalAmt.innerText = `$${total}`;
 }
 
-//TODO 
-//!REMOVE BUTTON REMOVES TASKS FROM LIST AND TOTAL
+function removeItems(postId) {
+ 
+    const index = taskArray.findIndex(function(task) {
+        return task.uuid === postId;
+    });
+   
+    taskArray.splice(index, 1);
+
+    renderTasksList(taskArray);
+    renderTotalPrice(taskArray);
+
+};
 
 function reset () {
+    
     taskArray = [];
-    renderTasksList();
-    renderTotalPrice();
+    renderTasksList(taskArray);
+    renderPriceList(taskArray);
+    renderTotalPrice(taskArray);
     totalAmt.innerText = `$0`;
-}
+
+};
 
 /****** EVENT LISTENERS ******/
 
 addBtn.addEventListener("click", function() {
-    renderTasksArray();
-    renderTasksList();
-    renderPriceList();
-    renderTotalPrice();
+    
+    renderTasksArray(taskArray);
+    renderTasksList(taskArray);
+    renderPriceList(taskArray);
+    renderTotalPrice(taskArray);
     taskInput.value = "";
     priceSelect.value = "";
-})
 
-//TODO 
-//!REMOVE BUTTON REMOVES TASKS FROM LISTS AND TOTAL - EVENT LISTENER
+});
+
+taskUl.addEventListener("click", function(e) {
+    
+    const removeTarget = e.target.dataset.remove;
+    removeItems(removeTarget);
+
+});
 
 document.getElementById('send-btn').addEventListener("click", function () {
+    
     reset();
+
 })
