@@ -83,14 +83,6 @@ function removeItems(postId) {
     render()
 };
 
-function handleFormSubmit(e) {
-    e.preventDefault(); //Prevent form submission from rendering lists
-    render();
-    taskInput.value = "";
-    priceSelect.value = "";
-};
-
-
 function render () {
     renderTasksArray(taskArray);
     taskUl.innerHTML = renderTasksList(taskArray)
