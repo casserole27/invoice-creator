@@ -38,90 +38,101 @@
             </header>
 
             <main class="main-container">
-
-                <div class="form-div">
-                    
-                    <input 
-                        type="text"
-                        id="task-input"
-                        name="task-input" 
-                        aria-label="enter task" 
-                        placeholder="Enter task"
-                        required>
-
-                        <!--TODO https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select-->
-                        <select name="prices" id="prices-select">
-                            <option value="">
-                                --$</option>
-                            <option value="10">
-                                <span>$</span>
-                                10</option>
-                            <option value="20">
-                                <span>$</span>
-                                20</option>
-                            <option value="30">
-                                <span>$</span>
-                                30</option>
-                            <option value="40">
-                                <span>$</span>
-                                40</option>
-                            <option value="50">
-                                <span>$</span>
-                                50</option>
-                        </select>
-                        
-                        <button class="add-btn fa-solid fa-plus" 
-                            id="add-btn"
-                            aria-label="submit selections" 
-                            ></button>
-               </div>
-
-                <section class="info-container" id="info-container">
                 
-                <!--TODO LISTS TO BE RENDERED BY JS-->    
-                    <div class="tasks-container">    
+                <form action="">
+                
+                    <div class="form-div">
+                        
+                        <input 
+                            type="text"
+                            id="task-input"
+                            name="task-input" 
+                            aria-label="enter task" 
+                            placeholder="Enter task"
+                            required>
 
-                        <h3 class="task-title">task</h3>
+                            <!--TODO https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select-->
+                            <select name="prices" id="prices-select">
+                                <option value="">
+                                    --$</option>
+                                <option value="10">
+                                    <span>$</span>
+                                    10</option>
+                                <option value="20">
+                                    <span>$</span>
+                                    20</option>
+                                <option value="30">
+                                    <span>$</span>
+                                    30</option>
+                                <option value="40">
+                                    <span>$</span>
+                                    40</option>
+                                <option value="50">
+                                    <span>$</span>
+                                    50</option>
+                            </select>
+                            
+                            <button class="add-btn fa-solid fa-plus" 
+                                id="add-btn"
+                                aria-label="submit task and price" 
+                                ></button>
+                
+                    </div> <!--close form div-->
 
-                        <ul class="task-list" id="task-list"></ul>            </ul>
+                    <section class="info-container" id="info-container">
                     
-                    </div>
-                    
-                    <div class="total-container">
+                    <!--TODO LISTS TO BE RENDERED BY JS-->    
+                        <div class="tasks-container">    
+
+                            <h3 class="task-title">task</h3>
+                            <ul class="task-list" id="task-list"></ul>            </ul>
                         
-                        <h3 class="total=title">total</h3>
+                        </div>
                         
-                        <ul id="price-list"></ul>
+                        <div class="total-container">
+                            
+                            <h3 class="total=title">total</h3>
+                            <ul id="price-list"></ul>
+                            
+                        </div>
+
+                    </section>
+
+                    <hr>
+
+                    <footer class="footer-container">
+
+                        <div class="notes-container">
+                            
+                            <h3 class="notes-title">notes</h3>
+                            <p class="notes">We accept cash, credit card, or PayPal</p>
                         
-                    </div>
+                        </div>
 
-                </section>
+                        <div class="total-amt-container">          
+                            <h3 class="total-title">total amount</h3>
+                            <!--TODO TOTAL AMOUNT TO BE RENDERED BY JS-->
+                            <p class="total-amt" id="total-amt">$0</p>
+                        </div>
 
-                <hr>
+                    </footer>
 
-                <footer class="footer-container">
-
-                    <div class="notes-container">
-                        
-                        <h3 class="notes-title">notes</h3>
-                        <p class="notes">We accept cash, credit card, or PayPal</p>
-                    
-                    </div>
-
-                    <div class="total-amt-container">          
-                        <h3 class="total-title">total amount</h3>
-                        <!--TODO TOTAL AMOUNT TO BE RENDERED BY JS-->
-                        <p class="total-amt" id="total-amt">$0</p>
-                    </div>
-
-                </footer>
-
-                <button class="send-btn" id="send-btn" type="submit">
-                    <span class="env-icon fa-solid fa-envelope"></span>
-                    send invoice</button>
-
+                    <button 
+                        class="send-btn" 
+                        id="send-btn" 
+                        type="submit">
+                        <span class="env-icon fa-solid fa-envelope"></span>
+                        send invoice
+                    </button>
+            
+                </form>        
+            
             </main>
-        </div>
-     </body>
-  <script src="index.js" type="module"></script>
+        
+        </div> <!--close body div-->
+     
+    </body>
+  
+    <script src="index.js" type="module"></script>
+
 </html>

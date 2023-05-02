@@ -13,6 +13,7 @@ let taskArray = [];
 const addBtn = document.getElementById('add-btn');
 
 const taskUl = document.getElementById('task-list');
+const priceUl = document.getElementById('price-list');
 const taskInput = document.getElementById('task-input');
 const priceSelect = document.getElementById('prices-select');
 const totalAmt = document.getElementById('total-amt');
@@ -40,10 +41,10 @@ function renderTasksArray (arr) {
         };
     };
 };
- 
+
+
 function renderTasksList(arr) {
     let taskFeed = "";
-
     arr.forEach(function(task) {
         taskFeed += `
             <li>${task.name}
@@ -54,78 +55,62 @@ function renderTasksList(arr) {
                 </button>
             </li>`
     });
-
-    taskUl.innerHTML = taskFeed;
+    return taskFeed;
 }
 
 function renderPriceList(arr) {
     let priceFeed = "";
-
     arr.forEach(function(task) {
         priceFeed += `
         <li>$${task.price}</li>`
     });
-
-    document.getElementById('price-list').innerHTML = priceFeed;
-}
+    return priceFeed;
+};
 
 
 function renderTotalPrice(arr) {
-  
     let total = 0;
     arr.forEach(function(amount) {
         total += parseInt(amount.price);
-    })
-    
-    totalAmt.innerText = `$${total}`;
-}
+    });
+    return `$${total}`;
+};
+
 
 function removeItems(postId) {
- 
     const index = taskArray.findIndex(function(task) {
         return task.uuid === postId;
     });
-   
     taskArray.splice(index, 1);
-
-    renderTasksList(taskArray);
-    renderPriceList(taskArray);
-    renderTotalPrice(taskArray);
-
+    render()
 };
 
-function reset () {
-    
-    taskArray = [];
-    renderTasksList(taskArray);
-    renderPriceList(taskArray);
-    renderTotalPrice(taskArray);
-    totalAmt.innerText = `$0`;
 
+function render () {
+    renderTasksArray(taskArray);
+    taskUl.innerHTML = renderTasksList(taskArray)
+    priceUl.innerHTML = renderPriceList(taskArray)
+    totalAmt.innerText = renderTotalPrice(taskArray)
+};
+
+//!If this were a working form being sent to a server, is this how it would be cleared?
+function reset () {
+    taskArray = [];
+    render()
+    totalAmt.innerText = `$0`;
 };
 
 /****** EVENT LISTENERS ******/
 
 addBtn.addEventListener("click", function() {
-    
-    renderTasksArray(taskArray);
-    renderTasksList(taskArray);
-    renderPriceList(taskArray);
-    renderTotalPrice(taskArray);
+    render()
     taskInput.value = "";
     priceSelect.value = "";
-
 });
 
 taskUl.addEventListener("click", function(e) {
-    
     const removeTarget = e.target.dataset.remove;
     removeItems(removeTarget);
-
 });
 
-document.getElementById('send-btn').addEventListener("click", function () {
-    
-    reset();
-
-})
+document.getElementById('send-btn').addEventListener("click", reset)
