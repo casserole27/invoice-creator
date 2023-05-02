@@ -17,7 +17,7 @@
 ### Overview
 
 Scrimba M5 bootcamp project - invoice creator
-[Scrim](https://scrimba.com/scrim/coffa4aeba9a29f65b0d45dd0)
+-[Scrim](https://scrimba.com/scrim/coffa4aeba9a29f65b0d45dd0)
 
 
 ### The challenge
@@ -37,7 +37,7 @@ Stretch goals
   - add new task and cost to the array and update task list
 - remove tasks from list, also removes from total amount
 
-Personal stretch goal
+Personal stretch goals
 - mobile-first design
 - responsive design
 
@@ -46,13 +46,13 @@ Personal stretch goal
 ### Screenshot
 
 ![Desktop](images/invoice-creator-desktop.png)
-![screenshot](images/invoice-creator-mobile.png)
+![screenshot](images/invoice-creator-mobile.png | width=425)
 
 ### Links
 
-[Scrim](https://scrimba.com/scrim/co37946fd8d57137e0724c598)s
-[Github](https://github.com/casserole27/invoice-creator)
-[Live Site](http://www.clewisdev.com/invoice-creator/)
+-[Scrim](https://scrimba.com/scrim/co37946fd8d57137e0724c598)
+-[Github](https://github.com/casserole27/invoice-creator)
+-[Live Site](http://www.clewisdev.com/invoice-creator/)
 
 ## My process
 
@@ -64,11 +64,12 @@ Personal stretch goal
 - Project work
 - Publish live URL
 - Check markup and accessibility
-(https://validator.w3.org/)
-(https://wave.webaim.org/)
+  -(https://validator.w3.org/)
+  -(https://wave.webaim.org/)
 - README file
 
 ### Built with
+- Github using command line
 - semantic HTML5
 - CSS custom properties
 - Mobile-first design
@@ -107,7 +108,9 @@ document.getElementById('invoice-form').addEventListener("submit", handleFormSub
 
 ### Continued development
 
-Code reviewer notes
+- Command line - is it possible to move changed files to a different branch before committing? I tried to switch because I realized I was on the wrong branch and things got messy.
+
+- Code reviewer notes
 
 
 ### Useful resources
