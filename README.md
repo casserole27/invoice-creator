@@ -37,22 +37,18 @@ Stretch goals
   - add new task and cost to the array and update task list
 - remove tasks from list, also removes from total amount
 
-Personal stretch goal
-- mobile-first design
-- responsive design
 
 [Figma file](https://www.figma.com/file/J65OauJ0iGEx3xNHGezVaS/Invoice-Creator-(Copy)?t=C6WQSI9kYNScW39R-0)
 
 ### Screenshot
 
-![Desktop](images/invoice-creator-desktop.png)
-![screenshot](images/invoice-creator-mobile.png)
+![screenshot](#)
 
 ### Links
 
 [Scrim](https://scrimba.com/scrim/co37946fd8d57137e0724c598)s
 [Github](https://github.com/casserole27/invoice-creator)
-[Live Site](http://www.clewisdev.com/invoice-creator/)
+[Live Site](#)
 
 ## My process
 
@@ -69,46 +65,13 @@ Personal stretch goal
 - README file
 
 ### Built with
-- semantic HTML5
+
 - CSS custom properties
-- Mobile-first design
 - Responsive Web Design
-- vanilla JavaScript
-- ARIA roles / accessibility
-- UI updates for better UX
 
 ### What I learned
-- how to apply a uuid to identify array elements
-- thinking about methods that create new arrays vs. methods that apply to elements of arrays
-- making a render() function for DRYer code, I had these functions called in multiple places
-
-```javascript
-function render () {
-    renderTasksArray(taskArray);
-    taskUl.innerHTML = renderTasksList(taskArray)
-    priceUl.innerHTML = renderPriceList(taskArray)
-    totalAmt.innerText = renderTotalPrice(taskArray)
-};
-```
-
-- review preventDefault() method for proper input and rendering functionality
-- "submit" event handler for working with forms
-
-```javascript
-function handleFormSubmit(e) {
-    e.preventDefault(); //Prevent form submission from rendering lists
-    render();
-    taskInput.value = "";
-    priceSelect.value = "";
-};
-
-
-document.getElementById('invoice-form').addEventListener("submit", handleFormSubmit);
-```
 
 ### Continued development
-
-Code reviewer notes
 
 
 ### Useful resources
@@ -117,18 +80,12 @@ Code reviewer notes
 
 [freeCodeCamp - removing an element from JS array](https://www.freecodecamp.org/news/how-to-remove-an-element-from-a-javascript-array-removing-a-specific-item-in-js/#remove-an-element-at-any-index-with-splice)
 
-ChatGPT prompts:
-- How would I refactor this code so that the HTML form input  works correctly?
-- What should I do in the HTML?
-```html
-      <form action="">
-```
-- When I click the 'send-btn' element to execute the reset function, the text input says "please fill out this field". Why is that?
 
 ## Author
 
 - Website - [C Lewis](https://www.clewisdev.com)
 - LinkedIn - [LinkedIn](https://www.linkedin.com/in/clewisdev/)
+
 
 ## Acknowledgments
 
