@@ -10,8 +10,6 @@ import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 
 let taskArray = [];
 
-const addBtn = document.getElementById('add-btn');
-
 const taskUl = document.getElementById('task-list');
 const priceUl = document.getElementById('price-list');
 const taskInput = document.getElementById('task-input');
@@ -42,7 +40,6 @@ function renderTasksArray (arr) {
         };
     };
 };
-
 
 function renderTasksList(arr) {
     let taskFeed = "";
@@ -94,8 +91,15 @@ function render () {
     totalAmt.innerText = renderTotalPrice(taskArray)
 };
 
-//!If this were a working form being sent to a server, is this how it would be cleared?
-function reset () {
+function handleFormSubmit(e) {
+    e.preventDefault(); //Prevent form submission from rendering lists
+    render();
+    taskInput.value = "";
+    priceSelect.value = "";
+}
+
+function reset (e) {
+    e.preventDefault(); //Added because form has no action attribute / submission at this time
     taskArray = [];
     render()
     totalAmt.innerText = `$0`;
@@ -103,11 +107,7 @@ function reset () {
 
 /****** EVENT LISTENERS ******/
 
-addBtn.addEventListener("click", function() {
-    render()
-    taskInput.value = "";
-    priceSelect.value = "";
-});
+document.getElementById('invoice-form').addEventListener("submit", handleFormSubmit);
 
 taskUl.addEventListener("click", function(e) {
     const removeTarget = e.target.dataset.remove;
