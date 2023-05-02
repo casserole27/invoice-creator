@@ -18,6 +18,7 @@ const taskInput = document.getElementById('task-input');
 const priceSelect = document.getElementById('prices-select');
 const totalAmt = document.getElementById('total-amt');
 
+
 /****** FUNCTIONS ******/
 
 function renderTasksArray (arr) {
