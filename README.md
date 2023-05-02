@@ -95,11 +95,11 @@ function render () {
 - "submit" event handler for working with forms
 
 ```javascript
-function render () {
-    renderTasksArray(taskArray);
-    taskUl.innerHTML = renderTasksList(taskArray)
-    priceUl.innerHTML = renderPriceList(taskArray)
-    totalAmt.innerText = renderTotalPrice(taskArray)
+function handleFormSubmit(e) {
+    e.preventDefault(); //Prevent form submission from rendering lists
+    render();
+    taskInput.value = "";
+    priceSelect.value = "";
 };
 
 document.getElementById('invoice-form').addEventListener("submit", handleFormSubmit);

@@ -29,7 +29,7 @@ function renderTasksArray (arr) {
     
     } else if (!arr.includes(taskInput.value)) {
         
-        if (taskInput.value != '') {
+        if (taskInput.value != '' && priceSelect.value != '') {
             taskInput.classList.remove('active');
             taskInput.placeholder = "Enter task";
             arr.push({
@@ -83,6 +83,13 @@ function removeItems(postId) {
     render()
 };
 
+function handleFormSubmit(e) {
+    e.preventDefault(); //Prevent form submission from rendering lists
+    render();
+    taskInput.value = "";
+    priceSelect.value = "";
+};
+
 
 function render () {
     renderTasksArray(taskArray);
@@ -90,6 +97,7 @@ function render () {
     priceUl.innerHTML = renderPriceList(taskArray)
     totalAmt.innerText = renderTotalPrice(taskArray)
 };
+
 
 function handleFormSubmit(e) {
     e.preventDefault(); //Prevent form submission from rendering lists
