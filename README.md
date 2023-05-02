@@ -46,10 +46,11 @@ Personal stretch goals
 ### Screenshot
 
 ![Desktop](images/invoice-creator-desktop.png)
-![screenshot](images/invoice-creator-mobile.png | width=425)
+<img src="images/invoice-creator-mobile.png" width="425">
 
 ### Links
 
+Project locations:
 -[Scrim](https://scrimba.com/scrim/co37946fd8d57137e0724c598)
 -[Github](https://github.com/casserole27/invoice-creator)
 -[Live Site](http://www.clewisdev.com/invoice-creator/)
