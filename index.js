@@ -27,7 +27,7 @@ function renderTasksArray (arr) {
         taskInput.classList.toggle('active');
         taskInput.placeholder = "Please enter new task";
     
-    } else if (!arr.includes(taskInput.value) && typeof priceSelect.value === 'number') {
+    } else if (!arr.includes(taskInput.value)) {
         
         if (taskInput.value != '') {
             taskInput.classList.remove('active');
