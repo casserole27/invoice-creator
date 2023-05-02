@@ -102,7 +102,6 @@ function handleFormSubmit(e) {
     priceSelect.value = "";
 };
 
-
 document.getElementById('invoice-form').addEventListener("submit", handleFormSubmit);
 ```
 

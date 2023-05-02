@@ -41,7 +41,6 @@ function renderTasksArray (arr) {
     };
 };
 
-
 function renderTasksList(arr) {
     let taskFeed = "";
     arr.forEach(function(task) {
@@ -100,8 +99,15 @@ function render () {
 };
 
 
+function handleFormSubmit(e) {
+    e.preventDefault(); //Prevent form submission from rendering lists
+    render();
+    taskInput.value = "";
+    priceSelect.value = "";
+}
+
 function reset (e) {
-    e.preventDefault(); //Form does not have an action / does not have submit
+    e.preventDefault(); //Added because form has no action attribute / submission at this time
     taskArray = [];
     render()
     totalAmt.innerText = `$0`;
