@@ -29,7 +29,7 @@ function renderTasksArray (arr) {
     
     } else if (!arr.includes(taskInput.value)) {
         
-        if (taskInput.value != '') {
+        if (taskInput.value != '' && priceSelect.input != '') {
             taskInput.classList.remove('active');
             taskInput.placeholder = "Enter task";
             arr.push({
