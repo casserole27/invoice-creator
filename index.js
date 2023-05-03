@@ -24,12 +24,12 @@ function renderTasksArray (arr) {
     if (arr.find(({ name }) => name === taskInput.value)) {
         taskInput.value = ""
         priceSelect.value = ""
-        taskInput.classList.toggle('active');
+        taskInput.classList.add('active');
         taskInput.placeholder = "Please enter new task";
     
     } else if (!arr.includes(taskInput.value)) {
         
-        if (taskInput.value != '' && priceSelect.value != '') {
+        if (taskInput.value !== '' && priceSelect.value !== '') {
             taskInput.classList.remove('active');
             taskInput.placeholder = "Enter task";
             arr.push({
@@ -37,6 +37,9 @@ function renderTasksArray (arr) {
                 price: priceSelect.value,
                 uuid: uuidv4()     
             });
+        } else {
+            taskInput.classList.add('active');
+            taskInput.placeholder = "Enter task and select price";
         };
     };
 };
