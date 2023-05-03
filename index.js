@@ -91,6 +91,8 @@ function render () {
     taskUl.innerHTML = renderTasksList(taskArray)
     priceUl.innerHTML = renderPriceList(taskArray)
     totalAmt.innerText = renderTotalPrice(taskArray)
+    taskInput.classList.remove('active');
+    taskInput.placeholder = "Enter task";
 };
 
 
@@ -99,7 +101,7 @@ function handleFormSubmit(e) {
     render();
     taskInput.value = "";
     priceSelect.value = "";
-}
+};
 
 function reset (e) {
     e.preventDefault(); //Added because form has no action attribute / submission at this time
