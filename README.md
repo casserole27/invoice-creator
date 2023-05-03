@@ -46,7 +46,7 @@ Personal stretch goals
 ### Screenshot
 
 ![Desktop](images/invoice-creator-desktop.png)
-![screenshot](images/invoice-creator-mobile.png | width=425)
+<img src="images/invoice-creator-mobile.png" width="425">
 
 ### Links
 
