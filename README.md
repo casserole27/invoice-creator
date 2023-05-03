@@ -50,6 +50,7 @@ Personal stretch goals
 
 ### Links
 
+Project locations:
 -[Scrim](https://scrimba.com/scrim/co37946fd8d57137e0724c598)
 -[Github](https://github.com/casserole27/invoice-creator)
 -[Live Site](http://www.clewisdev.com/invoice-creator/)
