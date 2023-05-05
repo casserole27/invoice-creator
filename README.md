@@ -40,6 +40,10 @@ Stretch goals
 Personal stretch goals
 - mobile-first design
 - responsive design
+- form UX
+   - green focus and hover states
+   - direct user if duplicate task is entered
+   - direct user if price is not selected
 
 [Figma file](https://www.figma.com/file/J65OauJ0iGEx3xNHGezVaS/Invoice-Creator-(Copy)?t=C6WQSI9kYNScW39R-0)
 
