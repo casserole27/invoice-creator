@@ -1,0 +1,15 @@
+.env              # Environment variables
+config.json       # Configuration files
+node_modules/     # Dependencies directory for Node.js
+dist/             # Build output directory
+build/            # Another common build directory
+coverage/         # Test coverage reports
+*.log             # Log files
+*.tmp             # Temporary files
+*.bak             # Backup files
+.DS_Store         # macOS Finder metadata
+Thumbs.db         # Windows thumbnail cache
+*.log             # Ignore all log files
+!important.log    # But not this specific log file
+
+

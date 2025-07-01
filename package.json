@@ -1,0 +1,24 @@
+{
+  "name": "invoice-creator",
+  "version": "1.0.0",
+  "description": "- [Overview](#overview)\r   - [The challenge](#the-challenge)\r   - [Screenshot](#screenshot)\r   - [Links](#links)\r - [My process](#my-process)\r   - [Built with](#built-with)\r   - [What I learned](#what-i-learned)\r   - [Continued development](#continued-development)\r   - [Useful resources](#useful-resources)\r - [Author](#author)\r - [Acknowledgments](#acknowledgments)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "db:migrate": "npx knex migrate:latest --knexfile ./db/knexfile.js",
+    "make-seed": "npx knex seed:make dev --knexfile ./db/knexfile.js" 
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "knex": "^3.1.0",
+    "objection": "^3.1.4",
+    "pg": "^8.12.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
